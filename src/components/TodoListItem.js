@@ -1,13 +1,18 @@
 import React from "react";
-import { tsModuleDeclaration } from "@babel/types";
+import './TodoListItem.css';
 
 const TodoListItem = ({ label, important = false }) => {
   
-  const style = {
-    color: important ? 'tomato' : 'black'
-  }
+  const className = important ? 'font-weight-bold text-info' : 'black';
   
-  return <span style={style}>{ label }</span>
+  return (
+    <div className="d-flex bd-highlight">
+      <span className={`p-2 flex-grow-1 bd-highlight ${className}`}>{ label }</span>
+      <btn className="p-2 bd-highlight btn btn-outline-success mr-2">CC.</btn>
+      <btn className="p-2 bd-highlight btn btn-outline-danger">!!!!!</btn>
+
+    </div>
+  )
 }
 
 export default TodoListItem;
