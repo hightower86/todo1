@@ -21,7 +21,7 @@ const App = () => {
         <SearchPanel />
         <ItemStatusFilter />
       </div>
-
+      
       <TodoList todos={todoData} />
     </div>
   );
