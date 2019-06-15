@@ -96,12 +96,20 @@ export default class App extends Component {
     console.log('doneFilter')
   }
 
+  search(items, text) {
+    if (text.length === 0) {
+      return items;
+    }
+    return items.filter((item) => {
+      return item.label.indexOf(text) > -1;
+    });
+  }
 
   render () {
     const { todoData, searchField } = this.state;
     const doneCount = todoData.filter((el)=> el.done).length;
     const todoCount = todoData.length - doneCount;
-    const filteredItems = todoData.filter((item) => item.label.toLowerCase().includes(searchField.toLowerCase()));
+    const filteredItems = this.search(todoData, searchField);
     
     return (
 
