@@ -21,7 +21,7 @@ export default class ItemAddForm extends Component {
     });
   };
 
-  render() {
+  render () {
     return (
       <form className='d-flex mt-3'
         onSubmit={this.onSubmit}>

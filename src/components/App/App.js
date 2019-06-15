@@ -84,6 +84,19 @@ export default class App extends Component {
     this.setState({searchField: e.target.value});
   }
 
+  resetFilter = () => {
+    console.log('resetFilter')
+  }
+
+  activeFilter = () => {
+    console.log('activeFilter')
+  }
+  
+  doneFilter = () => {
+    console.log('doneFilter')
+  }
+
+
   render () {
     const { todoData, searchField } = this.state;
     const doneCount = todoData.filter((el)=> el.done).length;
@@ -98,7 +111,11 @@ export default class App extends Component {
           <SearchPanel 
             filterItems={this.filterItems}
           />
-          <ItemStatusFilter />
+          <ItemStatusFilter 
+            resetFilter={this.resetFilter}
+            activeFilter={this.activeFilter}
+            doneFilter={this.doneFilter}
+          />
         </div>
 
         <TodoList 
