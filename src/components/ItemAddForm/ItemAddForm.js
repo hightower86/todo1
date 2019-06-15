@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 import './ItemAddForm.css';
 
-
 export default class ItemAddForm extends Component {
   state = {
     label: ''
@@ -19,8 +18,8 @@ export default class ItemAddForm extends Component {
     this.props.adding(this.state.label)
     this.setState({
       label: ''
-    })
-  }
+    });
+  };
 
   render() {
     return (
