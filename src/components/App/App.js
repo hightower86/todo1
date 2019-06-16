@@ -84,8 +84,10 @@ export default class App extends Component {
     console.log('resetFilter')
   }
 
-  activeFilter = () => {
-    console.log('activeFilter')
+  activeFilter(items) {
+    return items.filter((item) => {
+      return !item.done;
+    })
   }
   
   doneFilter = () => {
@@ -101,7 +103,7 @@ export default class App extends Component {
       return items;
     }
     return items.filter((item) => {
-      return item.label.indexOf(term) > -1;
+      return item.label.toLowerCase().indexOf(term.toLowerCase()) > -1;
     });
   }
 
@@ -110,6 +112,7 @@ export default class App extends Component {
     const doneCount = todoData.filter((el)=> el.done).length;
     const todoCount = todoData.length - doneCount;
     const filteredItems = this.search(todoData, term);
+    //const filteredItems = this.activeFilter(todoData);
     
     return (
 
