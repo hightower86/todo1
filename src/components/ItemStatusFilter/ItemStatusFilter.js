@@ -5,7 +5,7 @@ import './ItemStatusFilter.css';
 export default class ItemStatusFilter extends Component {
 
   buttons = [
-      { name: 'add', label: 'Add'},
+      { name: 'all', label: 'All'},
       { name: 'active', label: 'Active'},
       { name: 'done', label: 'Done'}
   ];
