@@ -80,16 +80,6 @@ export default class App extends Component {
       };
     });
   };
-
-  resetFilter = () => {
-    console.log('resetFilter')
-  }
-
-  activeFilter(items) {
-    return items.filter((item) => {
-      return !item.done;
-    })
-  }
   
   onFilterChange = (filter) => {
     this.setState({ filter });
@@ -136,6 +126,7 @@ export default class App extends Component {
             onSearchChange={this.onSearchChange}
           />
           <ItemStatusFilter 
+            filter = {filter}
             onFilterChange={this.onFilterChange}
           />
         </div>
