@@ -121,7 +121,7 @@ export default class App extends Component {
 
       <div className="todo-app">
         <AppHeader toDo={todoCount} done={doneCount} />
-        <div className="top-panel d-flex">
+        <div className="top-panel d-flex flex-wrap">
           <SearchPanel 
             onSearchChange={this.onSearchChange}
           />

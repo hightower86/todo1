@@ -23,7 +23,7 @@ export default class ItemAddForm extends Component {
 
   render () {
     return (
-      <form className='d-flex mt-3'
+      <form className='container d-flex flex-sm-wrap mt-3'
         onSubmit={this.onSubmit}>
         <input className='form-control add-input' 
                 type="text" 
@@ -32,7 +32,8 @@ export default class ItemAddForm extends Component {
                 value={this.state.label}
         />
         <button type="button"
-                className="btn btn-sm btn-outline-secondary">Add</button>
+                className="btn btn-sm btn-outline-secondary"
+                onClick={this.onSubmit}>Add</button>
       </form>
     )
   }
